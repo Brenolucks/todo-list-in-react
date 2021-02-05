@@ -11,7 +11,7 @@ function TodoList ({ todos, setTodos }) { //Desestruturando e adicionando props
                         todos={todos}
                         todo={todo} 
                         text={todo.text} 
-                        key={todo.id} />
+                        key={todo.id} />    
                 ))}
             </ul>
         </div>

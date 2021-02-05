@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Form from './components/Form';
 import TodoList from './components/TodoList';
+import { Container, Hero, Title } from 'reactbulma';
 
 function App() {
   const [inputText, setInputText] = useState(""); //Estado do input
@@ -9,10 +10,12 @@ function App() {
   const [todos, setTodos] = useState([]); //Estado dos todos
   
     return (
-      <div className="App">
-        <header>
+      <Hero>
+      <Hero.Body>
+      <Container className="App">
+        <Title>
           <h1>Lista de tarefas</h1>
-        </header>
+        </Title>
         <Form //Usando funçoes como props
           inputText={inputText} 
           todos={todos} 
@@ -23,7 +26,9 @@ function App() {
           setTodos={setTodos} 
           todos={todos}
         />
-      </div>
+      </Container>
+      </Hero.Body>
+      </Hero>
     );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Checkbox, Delete, SubTitle } from 'reactbulma';
 
 function Todo({ text, todo, todos, setTodos }) {
     function deleteHandle(e) { //Função para deletar uma tarefa ou Todo
@@ -18,9 +19,14 @@ function Todo({ text, todo, todos, setTodos }) {
     }
     return(
         <div className="todo">
-            <li className="todo-item"> {text} </li>
-            <button onClick={checkedHandle}> Feito </button>
-            <button onClick={deleteHandle}> Deletar </button>
+            <SubTitle 
+                className="task"> {text} </SubTitle>
+            <Checkbox
+                id="checkbox-btn"
+                onClick={checkedHandle} />
+            <Delete
+                id="delete-btn" 
+               onClick={deleteHandle} > Deletar </Delete>
         </div>
     );
 }

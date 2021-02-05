@@ -1,6 +1,8 @@
 import React from 'react';
+import { Button, Input, Hero } from 'reactbulma';
 
 function Form ({ setInputText, todos, setTodos, inputText }) {
+    //Functions
     function handleInputText(e) { //Função para pegar o valor que foi digitado no input
         setInputText(e.target.value);
     }
@@ -17,21 +19,23 @@ function Form ({ setInputText, todos, setTodos, inputText }) {
     }
 
     return(
-        <div>
-            <form >
-                <input 
+        <Hero>
+            <form>
+                <Input hovered
+                    id="inputText" 
                     type="text"
                     value={inputText} //Pegando o valor que foi digitado para limpar o input
                     onChange={handleInputText}  
                 />
-                <button 
+                <Button primary outlined
+                    className="btnSubmit" 
                     type="submit" 
                     onClick={handleTodoSubmit}
                 > 
                     Adicionar 
-                </button>
+                </Button>
             </form>
-        </div>
+        </Hero>
     );
 }
 
