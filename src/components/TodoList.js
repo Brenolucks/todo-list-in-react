@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Todo from './Todo';
 
-function TodoList (props) {
-    const [task, setTask] = useState([]);
-    const [itemList, setItemList] = useState([]); //estado da lista
-
-    function addItemList(e) {
-        e.preventDefault(); //nao carrega outra pagina quando for clicado
-        if(Text) {
-            setItemList([...itemList, task]); //pega todos os itens da lista e adiciona um novo
-            setTask(""); //limpa o campo quando adiciona
-        }
-    }
+function TodoList ({ todos, setTodos }) { //Desestruturando e adicionando props
     return(
-        <div>
+        <div className="todo-container">
             <ul className="todo-list">
-                {props.itemList.map (item => (<li>{item}</li>))}
+                {todos.map(todo => ( //Usando a função map, para pegar o que foi digitado e adicionar na lista.
+                    <Todo 
+                        setTodos={setTodos} 
+                        todos={todos}
+                        todo={todo} 
+                        text={todo.text} 
+                        key={todo.id} />
+                ))}
             </ul>
         </div>
     );
