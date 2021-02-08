@@ -1,8 +1,5 @@
 <h1 align="center">
 <br>
-  <img src="YOUR_LOGO_URL" alt="ToDo List" width="120">
-<br>
-<br>
 ToDo List
 </h1>
 
